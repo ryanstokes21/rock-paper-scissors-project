@@ -1,4 +1,3 @@
-
 function getComputeChoice() {
   let computerChoice = Math.random();
   if (computerChoice <= 0.33) {
