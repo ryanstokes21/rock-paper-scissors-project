@@ -1,0 +1,10 @@
+1. PROJECT PROBLEM 
+    Build a rock paper scissors game to be played in the console. The computer will generate a random choice and the user will get to input a choice. Both choices will be compared then a winner will be declared.
+
+2. PROJECT PSEUDOCODE 
+    1|Prompt user and get users input rock, paper, or scissors
+    2|Computer Choice gets calculated with a random number between 0 and 1 with IF/ELSE.
+    3|Compare user choice and computer choice with IF/ELSE
+    4|Declare variables to track scores, initialize with 0
+    5|The game will be played round by round.
+      winner = Add score to winner +1 point.
