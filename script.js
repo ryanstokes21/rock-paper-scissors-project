@@ -4,31 +4,23 @@ let computerScore = 0;
 function getComputeChoice() {
   let computerChoice = Math.random();
   if (computerChoice <= 0.33) {
-    return 'Rock';
+    return 'rock';
   } else if (computerChoice <= 0.66) {
-    return 'Paper';
+    return 'paper';
   } else {
-    return 'Scissors';
+    return 'scissors';
   }
 }
 
 function getUserChoice() {
-  let answer = prompt('Rock, Paper, or Scissors?').toLowerCase();
-  switch (answer) {
-    case 'rock':
-      answer = 'Rock';
-      break;
-    case 'paper':
-      answer = 'Paper';
-      break;
-    case 'scissors':
-      answer = 'Scissors';
-      break;
-    default:
-      alert('Pick Rock, Paper, or Scissors');
-      getUserChoice();
-  };
-  return answer;
+  let answer = prompt('Rock, Paper, or Scissors?');
+  if (answer === 'rock') {
+    return 'rock';
+  } else if (answer === 'paper') {
+    return 'paper';
+  } else if (answer === 'scissors') {
+    return 'scissors'
+  }
 }
 
 function playRound(userChoice, computerChoice) {
@@ -36,15 +28,17 @@ function playRound(userChoice, computerChoice) {
     console.log(`Tie!`);
   } else if (userChoice === 'scissors' && computerChoice === 'paper') {
     console.log(`You win! ${userChoice} beats ${computerChoice}`);
+    userScore++;
   } else if (userChoice === 'paper' && computerChoice === 'rock') {
     console.log(`You win! ${userChoice} beats ${computerChoice}`);
+    userScore++;
   } else if (userChoice === 'rock' && computerChoice === 'scissors') {
     console.log(`You win! ${userChoice} beats ${computerChoice}`);
+    userScore++;
   } else {
     console.log(`You lose! ${computerChoice} beats ${userChoice}.`);
+    computerScore++;
   }
-  console.log(userChoice, 'userChoice')
-  console.log(computerChoice, 'computerChoice')
 }
 
 const userSelection = getUserChoice();
