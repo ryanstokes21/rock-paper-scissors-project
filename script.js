@@ -10,7 +10,8 @@ function getComputeChoice() {
 }
 
 function getUserChoice() {
-  let answer = prompt('Rock, Paper, or Scissors?');
+  let input = prompt('Rock, Paper, or Scissors?');
+  let answer = input.toLowerCase();
   if (answer === 'rock') {
     return 'rock';
   } else if (answer === 'paper') {
