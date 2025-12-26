@@ -29,17 +29,17 @@ function playGame() {
     if (userChoice === computerChoice) {
       console.log(`Tie! You: ${userScore} - Computer: ${computerScore}`);
     } else if (userChoice === 'scissors' && computerChoice === 'paper') {
+      ++userScore;
       console.log(`You win! ${userChoice} beats ${computerChoice}. You: ${userScore} - Computer: ${computerScore}`);
-      userScore++;
     } else if (userChoice === 'paper' && computerChoice === 'rock') {
+      ++userScore;
       console.log(`You win! ${userChoice} beats ${computerChoice}. You: ${userScore} - Computer: ${computerScore}`);
-      userScore++;
     } else if (userChoice === 'rock' && computerChoice === 'scissors') {
+      ++userScore;
       console.log(`You win! ${userChoice} beats ${computerChoice}. You: ${userScore} - Computer: ${computerScore}`);
-      userScore++;
     } else {
+      ++computerScore;
       console.log(`You lose! ${computerChoice} beats ${userChoice}. You: ${userScore} - Computer: ${computerScore}`);
-      computerScore++;
     }
   }
 
