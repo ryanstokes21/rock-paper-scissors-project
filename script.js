@@ -18,6 +18,8 @@ function getUserChoice() {
     return 'paper';
   } else if (answer === 'scissors') {
     return 'scissors'
+  } else {
+    return getUserChoice();
   }
 }
 
@@ -43,7 +45,6 @@ function playGame() {
     }
   }
 
- 
   playRound(getUserChoice(), getComputeChoice());
   playRound(getUserChoice(), getComputeChoice());
   playRound(getUserChoice(), getComputeChoice());
