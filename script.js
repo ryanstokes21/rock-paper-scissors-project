@@ -26,6 +26,7 @@ function getUserChoice() {
       break;
     default:
       console.log('Pick Rock, Paper, or Scissors');
+      getUserChoice();
   }
 }
 
