@@ -10,16 +10,11 @@ function getComputeChoice() {
 }
 
 function getUserChoice() {
-  let input = prompt('Rock, Paper, or Scissors?');
-  let answer = input.toLowerCase();
-  if (answer === 'rock') {
-    return 'rock';
-  } else if (answer === 'paper') {
-    return 'paper';
-  } else if (answer === 'scissors') {
-    return 'scissors'
-  } else {
+  let answer = prompt('Rock, Paper, or Scissors?').toLowerCase();
+  if (answer !== 'rock' && answer !== 'paper' && answer !== 'scissors'){
     return getUserChoice();
+  } else{
+    return answer;
   }
 }
 
@@ -45,6 +40,7 @@ function playGame() {
     }
   }
 
+ 
   playRound(getUserChoice(), getComputeChoice());
   playRound(getUserChoice(), getComputeChoice());
   playRound(getUserChoice(), getComputeChoice());
