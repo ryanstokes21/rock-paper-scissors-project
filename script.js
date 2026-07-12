@@ -21,3 +21,24 @@ function getComputerChoice() {
       break;
   }
 }
+
+function getUserChoice() {
+  //prompt for users choice for Rock Paper or Scissors
+  let userChoice = prompt('Choose Rock, Paper, or Scissors');
+  const normalizeChoice = userChoice.trim().toLowerCase();
+
+  //user inputs choice
+  //If user inputs Rock Paper of Scissors
+  //display choice in console.
+  switch (normalizeChoice) {
+    case 'rock':
+      console.log('Rock');
+      break;
+    case 'paper':
+      console.log('Paper');
+      break;
+    case 'scissors':
+      console.log('Scissors');
+      break;
+  }
+}
