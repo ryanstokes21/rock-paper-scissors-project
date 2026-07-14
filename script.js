@@ -25,6 +25,13 @@ function getComputerChoice() {
   }
 }
 
+function checkWinner(e) {
+  if (userScore === 5 || computerScore === 5) {
+    gameOver = true;
+    resultsEl.textContent = 'Game Over!!';
+  }
+}
+
 function displayUserWins(userChoice, computerChoice) {
   resultsEl.textContent = `You win!! ${userChoice} beats ${computerChoice}`;
 }
@@ -34,6 +41,7 @@ function displayScore() {
 }
 let userScore = 0;
 let computerScore = 0;
+let gameOver = false;
 
 function playRound(userSelection) {
   const userChoice = userSelection;
@@ -45,18 +53,22 @@ function playRound(userSelection) {
     displayUserWins(userChoice, computerChoice);
     userScore++;
     displayScore(userChoice, computerChoice);
+    checkWinner();
   } else if (userChoice === 'paper' && computerChoice === 'rock') {
     displayUserWins(userChoice, computerChoice);
     userScore++;
     displayScore();
+    checkWinner();
   } else if (userChoice === 'scissors' && computerChoice === 'paper') {
-    displayUserWins();
+    displayUserWins(userChoice, computerChoice);
     userScore++;
     displayScore();
+    checkWinner();
   } else {
     resultsEl.textContent = `You lose!! ${computerChoice} beats ${userChoice}`;
     computerScore++;
     displayScore();
+    checkWinner();
   }
   //if there is a winner
   //increment the score for the winner by 1
@@ -66,6 +78,7 @@ function playRound(userSelection) {
 const btnContainer = document.getElementById('btn-container');
 
 btnContainer.addEventListener('click', (e) => {
+  if (gameOver === true) return;
   const button = e.target.closest('.btn');
 
   if (!button || !btnContainer.contains(button)) return;
