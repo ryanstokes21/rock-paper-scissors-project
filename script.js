@@ -25,7 +25,7 @@ function getComputerChoice() {
   }
 }
 
-function checkWinner(e) {
+function checkWinner() {
   if (userScore === 5 || computerScore === 5) {
     gameOver = true;
     resultsEl.textContent = 'Game Over!!';
@@ -52,7 +52,7 @@ function playRound(userSelection) {
   } else if (userChoice === 'rock' && computerChoice === 'scissors') {
     displayUserWins(userChoice, computerChoice);
     userScore++;
-    displayScore(userChoice, computerChoice);
+    displayScore();
     checkWinner();
   } else if (userChoice === 'paper' && computerChoice === 'rock') {
     displayUserWins(userChoice, computerChoice);
